@@ -1,0 +1,114 @@
+[
+ {
+  "id": 12,
+  "showtime": 1388770080,
+  "genres": [
+   "Drama",
+   "Comedy"
+  ],
+  "rating": 0,
+  "description": "A silent movie star meets a young dancer, but the arrival of talking pictures sends their careers in opposite directions.",
+  "title": "The Artist",
+  "director": "Michel Hazanavicius",
+  "year": 2009
+ },
+ {
+  "id": 5,
+  "showtime": 1388700300,
+  "rating": 0,
+  "description": "The film is set in New York, shortly after the end of the Vietnam War.  Travis Bickle, a lonely and mentally unstable veteran starts working as a taxi driver, joining the murky city night life.",
+  "title": "Taxi Driver",
+  "genres": [
+   "Drama",
+   "Action"
+  ],
+  "director": "Martin Scorsese",
+  "year": 1974
+ },
+ {
+  "genres": [
+   "Drama"
+  ],
+  "rating": 0,
+  "showtime": 1388799980,
+  "description": "The film is a story of a passive journalist's week in Rome, and his search for both happiness and love that will never come.",
+  "title": "La Dolce Vita",
+  "id": 7,
+  "director": "Federico Fellini",
+  "year": 1960
+ },
+ {
+  "director": "Gore Verbinski",
+  "rating": 0,
+  "showtime": 1388733380,
+  "description": "To control the oceans, Lord Cutler Beckett kills anyone associated with piracy and uses Davy Jones to destroy all pirate ships on the seas. Condemned prisoners sing 'Hoist the Colours' to compel the nine pirate lords to convene at Shipwreck Cove; however, the late Captain Jack Sparrow, pirate lord of the Caribbean, never appointed a successor. Captain Barbossa leads Will, Elizabeth, Tia Dalma and the crew of the Black Pearl to rescue Jack from Davy Jones's Locker..",
+  "title": "Pirates of the Caribbean: At World's End",
+  "id": 3,
+  "year": 2007,
+  "length": 169,
+  "genres": [
+   "Action",
+   "Adventure",
+   "Fantasy"
+  ]
+ },
+ {
+  "director": "David Yates",
+  "rating": 0,
+  "showtime": 1388779000,
+  "description": "The Order of the Phoenix, a secret organisation founded by Albus Dumbledore, inform the now 15-year-old Harry Potter that the Ministry of Magic is in denial of Lord Voldemort's return; under the Ministry's influence, The Daily Prophet has launched a smear campaign against Harry and Dumbledore due to Harry's supposed encounter with Voldemort at the end of the previous year. This encounter has had a huge psychological effect on Harry – he has nightmares not only about what happened in the graveyard but also about the Department of Mysteries at the Ministry of Magic. While at the Order's headquarters, 12 Grimmauld Place, Harry's godfather, Sirius Black, mentions that Voldemort is after an object which he didn't have last time.",
+  "title": "Harry Potter and the Order of the Phoenix",
+  "id": 4,
+  "year": 2007,
+  "length": 138,
+  "genres": [
+   "Adventure",
+   "Family",
+   "Fantasy"
+  ]
+ },
+ {
+  "id": 1,
+  "showtime": 1388734440,
+  "director": "Sam Raimi",
+  "description": "Peter Parker plans to propose to Mary Jane Watson, who has just made her Broadway musical debut. A meteorite crashes near the two in Central Park, and an extraterrestrial symbiote attaches itself to Peter's moped. While fleeing police, escaped prisoner Flint Marko falls into a particle accelerator that fuses his body with surrounding sand and allows him to shapeshift at will as the Sandman. Peter's best friend, Harry Osborn, who knows Peter is Spider-Man and holds him responsible for his father's death, attacks Peter using weapons based on his father's Green Goblin technology. Harry injures his head and suffers from partial amnesia, making him forget his revenge and that Peter is Spider-Man.",
+  "title": "Spider-Man 3",
+  "rating": 1,
+  "year": 2007,
+  "length": 139,
+  "genres": [
+   "Adventure",
+   "Family",
+   "Fantasy"
+  ]
+ },
+ {
+  "director": "Christopher Nolan",
+  "showtime": 1388129980,
+  "rating": 0,
+  "description": "In Gotham City, The Joker and his accomplices rob a mob-owned bank. The accomplices kill each other off one by one in a sequence masterminded by the Joker, who escapes alone with all the money.Batman and Lt. Jim Gordon decide to include the new district attorney, Harvey Dent, in their plan to eradicate the mob. Although Dent is dating Rachel Dawes, Bruce Wayne is impressed with his idealism and offers to throw him a fundraiser. Mob bosses Sal Maroni, Gambol, and The Chechen hold a videoconference with Lau, a Chinese accountant who has hidden their funds and fled to Hong Kong. The Joker interrupts the meeting, warning that Batman is unhindered by jurisdiction. He offers to kill Batman for half their money, but the mob bosses refuse, and Gambol puts a bounty on him. The Joker kills Gambol and takes control of his men. Batman captures Lau and delivers him back to Gotham to testify against the Joker and the mob.",
+  "title": "The Dark Knight",
+  "id": 6,
+  "year": 2008,
+  "length": 152,
+  "genres": [
+   "Action",
+   "Crime",
+   "Drama"
+  ]
+ },
+ {
+  "director": "Steven Spielberg",
+  "showtime": 1388999980,
+  "rating": 0,
+  "description": "In 1957 during the Cold War, World War II veteran Indiana Jones and his partner George 'Mac' McHale are kidnapped by a group of Soviet agents led by Colonel Dr. Irina Spalko. The Soviets infiltrate a warehouse labeled 'Warehouse 51' in Nevada and force Jones to find a crate containing a corpse that was recovered from a crash ten year's earlier near Roswell, New Mexico. After finding the crate, with its highly magnetic contents, Mac, bribed by the Soviets, double-crosses Jones. After a running battle with the Soviets, Indiana manages to escape on a rocket sled into the desert; he stumbles into a deserted town, part of a nuclear test site and survives a nuclear detonation by hiding in a lead-lined refrigerator. After the blast, Indiana Jones is found and arrested. He informs the government that the crate was stolen by the Soviets but is later debriefed by the Federal Bureau of Investigation, who believe he's also working for the Soviets like Mac, but Indiana is defended by an old friend who also worked with him in the army.",
+  "title": "Indiana Jones and the Kingdom of the Crystal Skull",
+  "id": 2,
+  "year": 2008,
+  "length": 122,
+  "genres": [
+   "Action",
+   "Adventure"
+  ]
+ }
+]
