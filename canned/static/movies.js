@@ -1,77 +1,12 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var Backbone = require('backbone');
+require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"COhX3o":[function(require,module,exports){
 var $ = require('jquery-untouched');
+var Backbone = require('backbone');
 Backbone.$ = $;
-
-function checkAjax() {
- $.ajax({
-     url: "/api/movies",
-     headers: {"content-type": "application/json"}
- });
-};
-// checkAjax();
-
-var Monitor = require('./monitor');
-var Movies = require('collections/movies');
-
-var movies = new Movies();
-var monitor = new Monitor(movies);
-function simpleFetch() {
-  movies._delay = 4000;
-  movies.fetch();
-}
-simpleFetch();
-
-// movies.fetch({
-//   success: function(populated, response, options) {
-//     populated.trigger('populated');
-//     console.log(populated);
-//     console.log(response);
-//     console.log(options);
-//   },
-//   error: function() {
-// 
-//   }
-// });
-
-// movies.fetchPage(1);
-// 
-// var Movie = require('models/movie');
-// 
-// movie = movies.get(1);
-// movie.customFetch();
-
-},{"./monitor":2,"backbone":5,"collections/movies":3,"jquery-untouched":6}],2:[function(require,module,exports){
-var _ = require('underscore');
-var Backbone = require('backbone');
-
-  var Monitor = function(collection) {
-    _.extend(this, Backbone.Events);
-    this.listenTo(collection, 'all', function (eventName) {
-      console.log(eventName);
-    });
-  }
-  module.exports = Monitor;
-
-},{"backbone":5,"underscore":7}],3:[function(require,module,exports){
-var Backbone = require('backbone');
 
 var Movies = Backbone.Collection.extend({
  model: require('models/movie'),
 
  url: '/api/movies',
-
- sync: function(method, collection, options) { 
-   console.log("Fake synch");
-   console.log(method);
-   console.log("options  ", options);
-   options.headers = { 'X-DELAY': this._delay };
-   var out = Backbone.sync.call(this, method, collection, options);
-   console.log("outs..");
-   console.log(out);
-   return out;
- },
-
 
 // ... same as before
 
@@ -79,14 +14,17 @@ var Movies = Backbone.Collection.extend({
     return this.fetch({data: {page: num}});
  },
 
- beginSync: function() {
-   console.log("****");
+ delayedFetch: function(delay) {
+    return this.fetch({headers: {"X-DELAY": delay}});
+ },
 
+ beginSync: function() {
+   console.log("before sync:  " + Date.now());
  },
  finishSync: function() {
-   console.log("----");
-
+   console.log("after sync:  " + Date.now());
  },
+
  apiRoot: 'config.api.versionRoot',
 
  initialize: function() {
@@ -96,7 +34,9 @@ var Movies = Backbone.Collection.extend({
 });
 module.exports = Movies;
 
-},{"backbone":5,"models/movie":4}],4:[function(require,module,exports){
+},{"backbone":4,"jquery-untouched":5,"models/movie":3}],"movies":[function(require,module,exports){
+module.exports=require('COhX3o');
+},{}],3:[function(require,module,exports){
 var Backbone = require("backbone");
   var Movie = Backbone.Model.extend({
     defaults: {
@@ -118,7 +58,7 @@ var Backbone = require("backbone");
   });
   module.exports = Movie;
 
-},{"backbone":5}],5:[function(require,module,exports){
+},{"backbone":4}],4:[function(require,module,exports){
 //     Backbone.js 1.1.2
 
 //     (c) 2010-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -1728,7 +1668,7 @@ var Backbone = require("backbone");
 
 }));
 
-},{"underscore":7}],6:[function(require,module,exports){
+},{"underscore":6}],5:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v1.10.2
  * http://jquery.com/
@@ -11519,7 +11459,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 
 })( window );
 
-},{}],7:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 //     Underscore.js 1.6.0
 //     http://underscorejs.org
 //     (c) 2009-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -12864,4 +12804,4 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
   }
 }).call(this);
 
-},{}]},{},[1])
+},{}]},{},[])
