@@ -66,7 +66,20 @@ var Layout = Backbone.XView.extend({
     $('#info').append(this.info.render().el);
   },
   
+  // start spinner
+  ajaxStart: function(){
+      $('.movies-loading').fadeIn({duration:100});
+  },
+  
+  // stop spinner
+  ajaxComplete: function(){
+      $('.movies-loading').fadeOut({duration:100});
+  },
+  
   initialize: function(options) {
+    this.listenTo(options.router.movies, 'request', this.ajaxStart);
+    this.listenTo(options.router.movies, 'sync', this.ajaxComplete);
+
     this.proxy = new Backbone.Obscura(options.router.movies); 
     this.proxy.setPerPage(4);
     this.addView('#overview', new MoviesList({
