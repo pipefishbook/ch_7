@@ -13,21 +13,21 @@ var MovieView = Backbone.View.extend({
 
   selectMovie: function(ev) {
     console.log('event on ' + this.model.id);
-    if (!this.model.get('selected')) {
-      this.router.navigate("/movies/" + this.model.id, {trigger: true});
-    }
+    this.selection.set('selected', this.model.id);
+    this.router.navigate("#movies/" + this.model.id);
   },
  
   render: function() {
     var tmpl = _.template(this.template);
     this.$el.html(tmpl(this.model.toJSON()));
-    this.$el.toggleClass('selected', this.model.get('selected'));
+    var selected = (this.selection.get('selected') === this.model.id);
+    this.$el.toggleClass('selected', selected);
     return this;
   },
 
   initialize: function(options) {
-    this.listenTo(this.model, 'change:title', this.render);
-    this.listenTo(this.model, 'change:selected', this.render);
+    this.selection = options.selection;
+    this.listenTo(this.selection, 'change:selected', this.render);
     this.router = options.router;
   }
 });

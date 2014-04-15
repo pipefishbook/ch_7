@@ -19,7 +19,7 @@ var MoviesRouter = Backbone.Router.extend({
   selectMovie: function(id) {
     this.movies.resetSelected();
     this.movies.selectByID(id);
-    this.layout.setDetails(this.movies.get(id));
+    this.layout.selection.set('selected', id);
   },
 
   showMain: function() {
@@ -28,16 +28,12 @@ var MoviesRouter = Backbone.Router.extend({
   },
 
   initialize: function(options) {
-    var that = this;
     monitor = new Monitor(movies);
-    movies.on('sync', function(results) {
-      console.log(results);
-      that.movies = movies;
-      that.layout = Layout.getInstance({
-        el: '#movies', router: this
-      });
-      that.layout.render();
+    this.movies = movies;
+    this.layout = Layout.getInstance({
+      el: '#movies', router: this
     });
+    this.layout.render();
   }
 });
 module.exports = MoviesRouter;
