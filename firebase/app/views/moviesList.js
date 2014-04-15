@@ -9,14 +9,20 @@ var MoviesList = Backbone.View.extend({
   render: function() {
     var that = this;
     var moviesView = this.collection.map(function(movie) {
-      return (new MovieView({model : movie, router: that.router})).render().el;
+      return (new MovieView({model : movie, selection: that.selection, router: that.router})).render().el;
     });
     this.$el.html(moviesView);
     return this;
   },
 
+  renderOne: function(movie) {
+    var view = new MovieView({model : movie, selection: this.selection, router: this.router});
+    this.$el.append(view.render().el);
+  },
+
   initialize: function(options) {
     this.router = options.router;
+    this.selection = options.selection;
     this.listenTo(this.collection, 'reset', this.render);
   }
 });

@@ -6,6 +6,7 @@ var _ = require('underscore');
 
 var $ = Backbone.$;
 
+var Selection = require('models/selection');
 var MoviesList = require('views/moviesList');
 var DetailsView = require('views/details');
 var ChoseView = require('views/chose');
@@ -41,7 +42,8 @@ var Layout = Backbone.XView.extend({
              <div id="details">   \
              </div>'),
 
-  setDetails: function(movie) {
+  setDetails: function(selection) {
+    var movie = this.proxy.get(selection.get('selected'));
     if (this.currentDetails) {
       this.removeView(this.currentDetails);
       this.render();
@@ -69,12 +71,15 @@ var Layout = Backbone.XView.extend({
   initialize: function(options) {
     this.proxy = new Backbone.Obscura(options.router.movies); 
     this.proxy.setPerPage(4);
+    this.selection = new Selection();
     this.addView('#overview', new MoviesList({
       collection: this.proxy,
-      router: options.router
+      router: options.router,
+      selection: this.selection
     }));
     this.controls = new Controls({ proxy: this.proxy });
     this.info = new Info({proxy: this.proxy });
+    this.listenTo(this.selection, 'change:selected', this.setDetails);
   }
 
 });
