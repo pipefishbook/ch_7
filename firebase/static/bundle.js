@@ -4787,6 +4787,7 @@ _.extend(Backbone.Firebase.prototype, {
 Backbone.Firebase.sync = function(method, model, options, error) {
   var store = model.firebase || model.collection.firebase;
 
+    console.log("**********");
   // Backwards compatibility with Backbone <= 0.3.3
   if (typeof options == 'function') {
     options = {
@@ -4800,8 +4801,10 @@ Backbone.Firebase.sync = function(method, model, options, error) {
   }
 
   store[method].apply(store, [model, function(err, val) {
+    console.log("**********");
     if (err) {
       model.trigger("error", model, err, options);
+      console.log(Backbone.VERSION);
       if (Backbone.VERSION === "0.9.10") {
         options.error(model, err, options);
       } else {
@@ -4809,6 +4812,7 @@ Backbone.Firebase.sync = function(method, model, options, error) {
       }
     } else {
       model.trigger("sync", model, val, options);
+      console.log(Backbone.VERSION);
       if (Backbone.VERSION === "0.9.10") {
         options.success(model, val, options);
       } else {
