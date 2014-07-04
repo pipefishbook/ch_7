@@ -1,4 +1,6 @@
 var Backbone = require('backbone');
+Backbone.Firebase = require('./backbone_firebase');
+
 var Movie = require('models/movie');
 var _ = require('underscore');
 
