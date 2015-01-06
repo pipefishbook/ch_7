@@ -34,7 +34,6 @@ var ControlsView = Backbone.View.extend({
   },
 
   paginatePrev: function() {
-    console.log("**");
     this.proxy.prevPage();
   },
 
